@@ -6,7 +6,7 @@ public class TaxiExam {
 		Taxi taxi = new Taxi();
 		
 		taxi.start();
-		taxi.afterMidnight();
+//		taxi.afterMidnight();
 		taxi.stop(10);
 
 	}
