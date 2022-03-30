@@ -1,0 +1,30 @@
+내장 객체 implicit Object
+
+내장 객체란 JSP에 의해서 미리 정의된 객체로 JSP내에서 선언 없이 이용할 수 있는 개체를 말함
+
+내장 객체의 종류
+request : 주로 URL에 포함된 사용자의 입력 값을 추출하는 용도로 사용
+response : 주로 페이지 리다이렉트용으로 많이 사용됨
+session : 브라우저와의 연결 정보를 유지 (기본 30분)
+
+request 객체
+주로 다른 페이지로 강제 이동하는 리디엑션 구현을 위한 용도로 많이 사용됨
+
+session 객체
+사용자가 로그인 후 그 로그인 상태를 유지할 필요가 있음
+서버에서 데이터를 유지함 (쿠키는 유저측에서 데이터를 유지)
+
+JDBC (Java Database Connectivity)
+JDBC는 자바에서 데이터베이스에 쉽게 접근하도록 도와주는 연결 통로
+자바 프로그램이 데이터베이스의 검색과 수정을 위한 sql문도 전송하고 결과도 받게됨
+
+JDBC를 사용하면 데이터베이스의 종류(mongo db, mysql, oracle)와 상관 없이
+데이터베이스 작업을 일관성 있게 처리할 수 있게 됨
+						Oracle
+						Mysql
+						MSsql
+자바 프로그램  > JDBC 인터페이스  MariaDB
+
+이클립스에서 JDBC를 이용하려면 사용하려는 프로젝트의
+WebContent - WEB-INF - lib 위치에 다운받은 
+mysql-connector-java-8.0.20.jar 파일을 복사함
