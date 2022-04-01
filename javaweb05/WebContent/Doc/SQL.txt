@@ -1,0 +1,5 @@
+"CREATE TABLE feed2("
+			+"name   varchar(20) NOT NULL,"
+			+"content  varchar(50) NULL DEFAULT NULL,"
+			+"ts     TIMESTAMP NULL DEFAULT CURRENT_TIMESTAMP(),"
+			+"primary key(name))";
