@@ -1,0 +1,9 @@
+db명 school
+table명 emp
+	      사번
+	      이름
+	      부서
+	      
+00 김지연 AI
+
+사원목록.jsp
