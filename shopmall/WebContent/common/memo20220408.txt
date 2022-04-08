@@ -1,0 +1,18 @@
+고객정보 관리 시스템
+회원가입
+회원정보 검색
+회원정보 갱신
+회원탈퇴
+
+
+고객정보 검색
+고객정보 갱신
+고객정보 삭제
+게시판
+공지사항
+
+DDL Data Definition Language 데이터 정의어
+DB만들기 / 삭제 Table 만들기 / 삭제
+
+DML Data Manipulation Language 데이터 조작어
+테이블에 데이터 넣기 / 삭제  / 편집
