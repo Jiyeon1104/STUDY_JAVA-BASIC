@@ -22,6 +22,9 @@
 <tr><td align = right>글작성</td>
 <td><textarea name = "ucon" rows = 3 cols = 20></textarea></td></tr>
 
+<tr><td align = right>이미지</td>
+<td><input type = "file" name = "uimage"></td></tr>
+
 <tr><td colspan = 2 align = center height = 40><input type = "submit" value = "등록"></td></tr>
 
 </table>
