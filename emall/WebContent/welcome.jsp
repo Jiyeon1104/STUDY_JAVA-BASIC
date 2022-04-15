@@ -14,10 +14,11 @@ font-family: 'Single Day', cursive;
 .alert{
 background-color : #ffe4e1;
 }
-
+a.navbar-brand{
+text-color : black;
+}
 .container-fluid{
 background-color : #ffe4e1;
-text-color : black;
 }
 </style>
 <meta charset="UTF-8">

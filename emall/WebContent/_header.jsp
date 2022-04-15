@@ -1,6 +1,26 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
+
+<style>/* 눈누에서 가져온 폰트 */
+@font-face {
+    font-family: 'HSYuji-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2108@1.1/HSYuji-Regular.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+body {
+   font-family: 'HSYuji-Regular';
+   padding-bottom: 70px;
+   background-color: #ffe4e1;
+}
+
+.container-fluid{
+	background-color: #ffe4e1;
+}
+
+</style>
+
+
 <nav class="navbar navbar-expand-lg navbar-pink" aria-label = "Ninth navbar example">
   <div class="container-fluid">
     <a class="navbar-brand" href="#"><b>e-MALL</b></a>
