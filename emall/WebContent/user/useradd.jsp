@@ -25,7 +25,7 @@
    </div>
    
    <div class="container" align="center">
-      <form action="useradddb.jsp" method="post">
+      <form action="useradddbbeans.jsp" method="post">
          <div class="form-group row">
             <label class="col-sm-2">아이디</label>
             <div class="col-sm-2">

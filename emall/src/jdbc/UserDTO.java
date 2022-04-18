@@ -11,7 +11,36 @@ public class UserDTO {
    private String uaddr;
    private String uregiday;
    
-   public String getUid() {
+   
+   
+   public void setUid(String uid) {
+	this.uid = uid;
+}
+public void setUpw(String upw) {
+	this.upw = upw;
+}
+public void setUname(String uname) {
+	this.uname = uname;
+}
+public void setUgender(String ugender) {
+	this.ugender = ugender;
+}
+public void setUbirth(String ubirth) {
+	this.ubirth = ubirth;
+}
+public void setUemail(String uemail) {
+	this.uemail = uemail;
+}
+public void setUphone(String uphone) {
+	this.uphone = uphone;
+}
+public void setUaddr(String uaddr) {
+	this.uaddr = uaddr;
+}
+public void setUregiday(String uregiday) {
+	this.uregiday = uregiday;
+}
+public String getUid() {
       return uid;
    }
    public String getUpw() {
@@ -51,5 +80,8 @@ public class UserDTO {
       this.uaddr = uaddr;
       this.uregiday = uregiday;
    }
+public UserDTO() {
+	
+}
 
 }

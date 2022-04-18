@@ -1,3 +1,4 @@
+<%request.setCharacterEncoding("utf-8"); %>
 <%@page import="jdbc.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
@@ -7,10 +8,13 @@
 <%@ page import = "org.apache.commons.fileupload.servlet.*" %>
 <%@page import="util.FileUtil"%>
 
-<%
-request.setCharacterEncoding("utf-8");
+<jsp:useBean id = "user" class = "jdbc.UserDTO" scope = "page"/>
+<jsp:setProperty property = "*" name = "user"/>
 
-String uid=request.getParameter("uid");
+
+
+<!-- 
+/*String uid=request.getParameter("uid");
 String upw=request.getParameter("upw");
 String uname=request.getParameter("uname");
 String ugender=request.getParameter("ugender");
@@ -27,4 +31,8 @@ if(result==1){
 }else{
    response.sendRedirect("/user/useradd.jsp");
 } 
-%>
+%> -->
+
+아이디 : <jsp:getProperty property = "uid" name = "user"/>
+암호 : <jsp:getProperty property = "upw" name = "user"/>
+이름 : <jsp:getProperty property = "uname" name = "user"/>
