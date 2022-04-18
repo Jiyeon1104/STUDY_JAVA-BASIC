@@ -44,20 +44,20 @@ public class BoardDAO {
 		ResultSet rs = null;
 		
 		try {
-			String sql = "SELECT * FROM board where board_id = ?";
+			String sql = "SELECT * FROM board WHERE board_id = ?";
 			conn = ConnectionPool.get();
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, board_id);
 			rs = pstmt.executeQuery();
 			
 			rs.next();
-			String id = rs.getString(1);
+			board_id = rs.getString(1);
 			String board_name = rs.getString(2);
 			String board_title = rs.getString(3);
 			String board_content = rs.getString(4);
 			String board_join_date = rs.getString(5);
 			
-			BoardDTO board = new BoardDTO(id, board_name, board_title, board_content, board_join_date);
+			BoardDTO board = new BoardDTO(board_id, board_name, board_title, board_content, board_join_date);
 			
 			return board;
 		} finally {

@@ -23,8 +23,6 @@ String title = "게시판 목록" ;
 <div class="alert" role="alert">
 <div class = "container">
 <h1><%=title %></h1>
-</div>
-</div>
 
 <table class="table table-hover">
   <thead>
@@ -52,6 +50,8 @@ for (BoardDTO board : boards){
  <%} %>
   </tbody>
 </table>
+</div>
+</div>
 
 <%@ include file = "/_footer.jsp" %>
 

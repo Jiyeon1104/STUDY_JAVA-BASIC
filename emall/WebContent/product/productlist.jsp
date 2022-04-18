@@ -2,6 +2,13 @@
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String uid = (String) session.getAttribute("id");
+if (uid == null){
+	response.sendRedirect("/user/login.jsp");
+	return;
+} // 세션 정보를 확인해서 로그인 상태인지 확인한 후 진입 허용 
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,7 +41,7 @@ ArrayList<ProductDTO> products = (new ProductDAO()).getList();
 for (ProductDTO product : products){
 %>
 <div class = "col-md-4">
-<img src = "" style = "width:100%">
+<img src = "/images/<%=product.getPimage()%>" style = "width:100%">
 <h3><%=product.getPname() %></h3>
 <p><%=product.getPprice() %>
 <p><a href = "productdetail.jsp?pid=<%=product.getPid() %>" class= "btn btn-secondary" role = "button">상세정보</a>

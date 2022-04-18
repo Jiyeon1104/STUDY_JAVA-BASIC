@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>상품목록</title>
 </head>
 <body>
 <%! 
@@ -31,7 +31,7 @@ ProductDTO product = (new ProductDAO()).getDetail(pid);
 <div class = "container">
 <div class = "row">
 <div class = "col-ma-5">
-<img src = "" style = "width : 100%">
+<img src = "/images/<%=product.getPimage() %>" style = "width : 100%">
 </div>
 <div class = "col-ma-6">
 <h3><%=product.getPname() %></h3>

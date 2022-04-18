@@ -1,14 +1,23 @@
 <%@page import="jdbc.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%
+String uid = (String) session.getAttribute("id");
+if (uid == null){
+	response.sendRedirect("/user/login.jsp");
+	return;
+} // 세션 정보를 확인해서 로그인 상태인지 확인한 후 진입 허용 
+%>
 <!DOCTYPE html>
 <html>
 <head>
+<meta charset="UTF-8">
+<title>게시판목록</title>
 </head>
 <body>
 <%! 
 // 선언문 : 전역변수 선언
-String title = "상품 상세" ;
+String title = "게시판 상세" ;
 %>
 <!-- CSS only -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -29,15 +38,14 @@ BoardDTO board = (new BoardDAO()).getDetail(board_id);
 <div class = "container">
 <div class = "row">
 <div class = "col-ma-5">
-<img src = "" style = "width : 100%">
 </div>
 <div class = "col-ma-6">
 <h3><%=board.getBoard_name() %></h3>
 <p><%=board.getBoard_content() %>
-<p><b>상품코드 : <%=board.getBoard_id() %></b>
-<p><b>상품가격 : <%=board.getBoard_content() %></b><br>
+<p><b>게시판번호 : <%=board.getBoard_id() %></b>
+<p><b>게시판내용 : <%=board.getBoard_content() %></b><br>
 <a href = "" class = "btn btn-info">댓글달기</a>
-<a href = "boardlist.jsp" class = "btn btn-secondary">게시판목록</a>
+<a href = "board_list.jsp" class = "btn btn-secondary">게시판목록</a>
 </div>
 
 </div>
