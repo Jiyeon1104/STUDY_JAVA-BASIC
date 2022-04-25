@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+
+    
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+
+
+
+      <a id="custom-login-btn" href="javascript:kakaoLogin()">
+         <img
+           src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+           width="222"
+         />
+       </a>
+       <button id="logout-btn" style="display: none" onclick="kakaoLogout()">
+         로그아웃
+       </button> 
+
+<script>
+// script
+
+// 발급 받은 키
+      Kakao.init("eb87d531ac2ccb7011e1e6d0d8a328e3");
+
+         function kakaoLogin() {
+           console.log("login");
+           Kakao.Auth.login({
+             // 카카오 개발자 사이트의 동의항목에서 설정한 ID와 반드시 일치해야함
+          scope: 'profile_nickname,account_email,gender,birthday',             success: function () {
+               // 로그인 성공 시
+               Kakao.API.request({
+                 // 사용자 정보를 가져온다.
+                 url: "/v2/user/me",
+                 success: (res) => {
+                   console.log("res:", res);
+                   const kakaoAccount = res.kakao_account;
+					location.href='/kakaotest.jsp?gender=' + kakaoAccount.gender 
+											  + '&birthday=' + kakaoAccount.birthday
+											  + '&mail=' + kakaoAccount.email
+											  + '&nickname=' + kakaoAccount.profile.nickname
+							;
+
+
+                   // 로그인 버튼 숨기기
+                   document.getElementById("custom-login-btn").style.display =
+                     "none";
+                   document.getElementById("logout-btn").style.display = "";
+                 },
+               });
+             },
+             fail: function (error) {
+               console.log(error);
+             },
+           });
+         }
+
+      </script>
+
+
+
+
+
+
+
+
+
+</body>
+</html>

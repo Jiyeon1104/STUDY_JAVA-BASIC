@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+
+   <a id="custom-login-btn" href="javascript:kakaoLogin()">
+      <img
+        src="//k.kakaocdn.net/14/dn/btqCn0WEmI3/nijroPfbpCa4at5EIsjyf0/o.jpg"
+        width="222"
+      />
+    </a>
+    <button id="logout-btn" style="display: none" onclick="kakaoLogout()">
+      로그아웃
+    </button> 
+    
+    
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+
+<script>
+// script
+// 발급 받은 키
+      Kakao.init("eb87d531ac2ccb7011e1e6d0d8a328e3");
+
+      function kakaoLogin() {
+        window.Kakao.Auth.login({
+          // 카카오 개발자 사이트의 동의항목에서 설정한 ID와 반드시 일치해야함
+          scope: 'profile_nickname,account_email,gender,birthday',
+          success: function (authObj) {
+                console.log(authObj);
+                window.Kakao.API.request({
+                url:'/v2/user/me',
+                success: res => {
+                    const kakaoAccount = res.kakao_account;
+                    location.href = 'kakaologindb.jsp?gender=' + kakaoAccount.gender 
+											  + '&birthday=' + kakaoAccount.birthday
+											  + '&email=' + kakaoAccount.email
+											  + '&nickname=' + kakaoAccount.profile.nickname
+							;
+		
+					
+					
+					
+					
+					
+                }
+                });
+
+
+          }
+        });
+      }
+      </script>
+
+
+
+</body>
+</html>
