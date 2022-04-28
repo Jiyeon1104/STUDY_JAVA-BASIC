@@ -1,0 +1,51 @@
+이메일 발송
+
+이메일 작성.jsp
+이메일 처리.jsp
+네이버 SMTP서버 
+인터넷
+
+SMTP : SIMPLE MAIL
+TRANSFER PROTOCOL
+
+1. 네이버 SMTP 설정
+
+네이버 메일함 >
+왼쪽 하단 [환경설정] >
+상단 가운데 [POP3/IMAP 설정] >
+POP3/SMTP 사용 > 
+사용함
+
+POP 서버명 : pop.naver.comSMTP 
+서버명 : smtp.naver.comPOP 포트 : 995, 보안연결(SSL) 
+필요SMTP 포트 : 465, 보안 연결(SSL) 
+필요아이디 : rlawl1104
+비밀번호 : 네이버 로그인 비밀번호
+
+2.
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<form action = "emailsend.jsp" method ="post">
+보내는 사람 <input type = "text" name = "from">
+받는 사람  <input type = "text" name = "to">
+제목 <input type = "text" name = "subject">
+형식 <input type = "radio" name = "format" value = "text" checked>TEXT
+<input type = "radio" name = "format" value = "html" checked>HTML<br>
+본문<br>
+<textarea name = "content" cols = "60" rows = "10"></textarea>
+<br>
+<button type = "submit">전송</button>
+</form>
+</body>
+</html>
+
+3. 라이브러리 설치
+https://mvnrepository.com/artifact/javax.mail/mail/1.4.7 (jar 다운로드)
+https://mvnrepository.com/artifact/javax.activation/activation/1.1.1 (jar 다운로드)
