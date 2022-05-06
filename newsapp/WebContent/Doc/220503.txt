@@ -1,0 +1,7 @@
+ConnectionPool
+
+WEB-INF-lib - mysql-connector-java-8.0.20.jar
+
+META-INF - context.xml (연결 설정)
+
+src - util ConnectionPool.java
